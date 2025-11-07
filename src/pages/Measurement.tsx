@@ -57,7 +57,7 @@ const img = (label: string) => {
       "/images/Stomatch.png",
     Hips: "/images/Hips.png",
     "Top Length":
-      "/images/TopLength.png",
+      "/images/TopLength1.png",
     Waist:
       "/images/Waist.png",
     Thigh:
