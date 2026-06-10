@@ -30,11 +30,13 @@ const formSchema = z.object({
   top_stomach: inchField,
   top_hips: inchField,
   top_length: inchField,
+  top_koti_length: inchField,
+  top_kurta_length: inchField,
   // Bottom
   bottom_waist: inchField,
   bottom_hips: inchField,
   bottom_thigh: inchField,
-  bottom_calf: inchField,
+  bottom_knee: inchField,
   bottom_folk: inchField,
   bottom_inner_length: inchField,
   bottom_length: inchField,
@@ -56,17 +58,22 @@ const img = (label: string) => {
     Stomach:
       "/images/Stomatch.png",
     Hips: "/images/Hips.png",
+    "Koti Length":
+      "/images/Sleeves.png",
+    "Kurta Length":
+      "/images/Kurta.png",
     "Top Length":
       "/images/TopLength1.png",
     Waist:
       "/images/Waist.png",
     Thigh:
       "/images/Thigh.png",
-    Calf: "/images/Calf.png",
+    Knee: "/images/Calf.png",
     Folk: "/images/Folk.png",
+    Bottom: "images/Bottom.png",
     "Inner Length":
       "/images/Inner Length.png",
-    "Bottom Length":
+    "Trouser Length":
       "/images/Bottom Length.png",
   };
 
@@ -142,11 +149,13 @@ export default function Measurement() {
         top_stomach: data.top_stomach,
         top_hips: data.top_hips,
         top_length: data.top_length,
+        top_koti_length: data.top_koti_length,
+        top_kurta_length: data.top_kurta_length,
         // bottom
         bottom_waist: data.bottom_waist,
         bottom_hips: data.bottom_hips,
         bottom_thigh: data.bottom_thigh,
-        bottom_calf: data.bottom_calf,
+        bottom_knee: data.bottom_knee,
         bottom_folk: data.bottom_folk,
         bottom_inner_length: data.bottom_inner_length,
         bottom_length: data.bottom_length,
@@ -256,13 +265,18 @@ export default function Measurement() {
             </CardHeader>
             <CardContent className="grid sm:grid-cols-2 lg:grid-cols-2 gap-10 pt-6">
               {[
-                ["top_neck", "Neck"],
+                ["top_length", "Top Length"],
+                ["top_kurta_length", "Kurta Length"],
+                ["top_koti_length", "Koti Length"],
                 ["top_shoulders", "Shoulders"],
                 ["top_sleeves", "Sleeves"],
                 ["top_chest", "Chest"],
                 ["top_stomach", "Stomach"],
                 ["top_hips", "Hips"],
-                ["top_length", "Top Length"],
+                ["top_neck", "Neck"],
+                
+                
+                
               ].map(([key, label]) => (
                 <div
                   key={key}
@@ -312,13 +326,14 @@ export default function Measurement() {
             </CardHeader>
             <CardContent className="grid sm:grid-cols-2 lg:grid-cols-2 gap-10 pt-6">
               {[
-                ["bottom_waist", "Waist"],
+                ["bottom_length", "Trouser Length"],
                 ["bottom_hips", "Hips"],
+                ["bottom_waist", "Waist"],
                 ["bottom_thigh", "Thigh"],
-                ["bottom_calf", "Calf"],
+                ["bottom_knee", "Knee"],
+                ["bottom", "Bottom"],
                 ["bottom_folk", "Folk"],
                 ["bottom_inner_length", "Inner Length"],
-                ["bottom_length", "Bottom Length"],
               ].map(([key, label]) => (
                 <div
                   key={key}

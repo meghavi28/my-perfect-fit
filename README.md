@@ -39,22 +39,29 @@ Phone: {{phone}}
 Notes: {{notes}}
 
 Top Measurements (inches):
-- Neck: {{top_neck}}
+- Top Length: {{top_length}}
+- Kurta Length: {{top_kurta_length}}
+- Koti Length: {{top_koti_length}}
 - Shoulders: {{top_shoulders}}
 - Sleeves: {{top_sleeves}}
 - Chest: {{top_chest}}
 - Stomach: {{top_stomach}}
 - Hips: {{top_hips}}
-- Top Length: {{top_length}}
+- Neck: {{top_neck}}
+
+
+
+
 
 Bottom Measurements (inches):
-- Waist: {{bottom_waist}}
+- Trouser Length: {{bottom_length}}
 - Hips: {{bottom_hips}}
+- Waist: {{bottom_waist}}
 - Thigh: {{bottom_thigh}}
-- Calf: {{bottom_calf}}
+- Knee: {{bottom_knee}}
+- Bottom: {{bottom}}
 - Folk: {{bottom_folk}}
 - Inner Length: {{bottom_inner_length}}
-- Bottom Length: {{bottom_length}}
 ```
 
 3. Create a `.env` file at the project root with your values:
