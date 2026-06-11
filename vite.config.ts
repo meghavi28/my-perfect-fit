@@ -9,6 +9,34 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  build: {
+    chunkSizeWarningLimit: 700,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('react-router-dom') || id.includes('react-dom')) {
+              return 'vendor_router';
+            }
+            if (id.includes('react')) {
+              return 'vendor_react';
+            }
+            if (
+              id.includes('@hookform') ||
+              id.includes('zod') ||
+              id.includes('@emailjs') ||
+              id.includes('react-phone-number-input') ||
+              id.includes('lucide-react') ||
+              id.includes('tailwind-merge')
+            ) {
+              return 'vendor_forms';
+            }
+            return 'vendor';
+          }
+        },
+      },
+    },
+  },
 })
 
 

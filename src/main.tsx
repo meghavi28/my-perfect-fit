@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
 import {
   createBrowserRouter,
@@ -7,7 +7,8 @@ import {
 } from "react-router-dom";
 import "./index.css";
 import App from "./App";
-import Measurement from "./pages/Measurement";
+
+const Measurement = lazy(() => import("./pages/Measurement"));
 
 const router = createBrowserRouter([
   {
@@ -15,7 +16,14 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { index: true, element: <Navigate to="/measurement" replace /> },
-      { path: "/measurement", element: <Measurement /> },
+      {
+        path: "/measurement",
+        element: (
+          <Suspense fallback={<div className="p-10 text-center">Loading...</div>}>
+            <Measurement />
+          </Suspense>
+        ),
+      },
     ],
   },
 ]);
