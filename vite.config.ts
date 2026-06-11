@@ -11,7 +11,7 @@ export default defineConfig({
   },
   server: {
     allowedHosts: [
-      'https://devserver-main--my-perfect-fit.netlify.app'
+      'devserver-main--my-perfect-fit.netlify.app'
     ]
   },
   build: {
