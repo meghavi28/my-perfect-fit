@@ -9,7 +9,11 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  base: '/my-perfect-fit/',
+  server: {
+    allowedHosts: [
+      'https://devserver-main--my-perfect-fit.netlify.app'
+    ]
+  },
   build: {
     chunkSizeWarningLimit: 700,
     rollupOptions: {
