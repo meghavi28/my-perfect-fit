@@ -9,6 +9,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  base: '/my-perfect-fit/',
   build: {
     chunkSizeWarningLimit: 700,
     rollupOptions: {
